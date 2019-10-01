@@ -1,0 +1,16 @@
+{
+  "name": "escola-idiomas",
+  "version": "1.0.0",
+  "description": "Site de escola de idiomas",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "matheus_polillo@yahoo.com",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "ibm-watson": "^4.5.1"
+  }
+}
