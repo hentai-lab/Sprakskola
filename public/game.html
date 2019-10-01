@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Escola de Idiomas</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen"/>
+</head>
+<body>
+    <script type="text/javascript">
+        $('.container img').replaceWith(function(i, v){
+            return $('<div/>', {
+                style: 'background-image: url(' + this.src + ');' +
+                'width:' + this.width + 'px;' +
+                'height:' + this.height + 'px;',
+                class: 'fakeImg'
+            })
+        })
+    </script>
+    <center>
+    <a href="index"><p>Voltar</p></a>
+    <h1>Jogo de Palavras em Inglês</h1>
+    <p>Informe a palavra em inglês o que representa a imagem abaixo:</p>
+    <div class="container">
+        <img src="<%= image %>" width='270px' height='250px'/>
+    </div>
+    <form>
+        <input type="text" name="answer">
+        <button type="button">Enviar</button>
+        <button type="button">Ajuda</button>
+    </form>
+    </center>
+</body>
+</html>
