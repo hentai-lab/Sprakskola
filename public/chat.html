@@ -11,12 +11,15 @@
     <h1>Atendente virtual</h1>
     <form>
         <p>Tire suas dúvidas com nosso atendente virtual:</p>
-        <input type="text" name="msg">
-        <button type="button">Enviar</button>
+        <input type="text" id="message">
+        <button type="button" onclick="sendMessage()">Enviar</button>
     </form>
     <br>
     <p>Resposta do atendente virtual:</p>
-    <p>Olá!</p>
+    <p id="answer">Olá!</p>
     </center>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/chat.js"></script>
 </body>
 </html>
