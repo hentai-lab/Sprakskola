@@ -1,5 +1,6 @@
 const AssistantV2 = require('ibm-watson/assistant/v2');
 const express = require('express');
+const fs = require('fs');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -12,9 +13,9 @@ app.set('view engine', 'html');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-const watson_api_key = '';
-const watson_assistant_id = '';
-const watson_workspace_id = '';
+const watson_api_key = 'RvHtP5bqBKk_EJekpmhxwC3ErPh3MFpssNEqrxv08zJw';
+const watson_assistant_id = '748bda65-ebe4-472e-95b0-786cfc990342';
+const watson_workspace_id = 'e91562c9-4b92-446a-8b0e-d09f2eceb50c';
 
 const port = process.env.PORT || 3000;
 
@@ -35,9 +36,10 @@ app.get('/game', (req, res) => {
 
 app.get('/chat', (req, res) => {
     res.render('chat.html');
-    /* var result = req.params.input_field;
-    console.log(result);
-    res.end(); */
+});
+
+app.get('/chat-2', (req, res) => {
+    res.render('chat-2.html');
 });
 
 app.post('/message', (req, res) => {

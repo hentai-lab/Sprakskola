@@ -8,16 +8,6 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen"/>
 </head>
 <body>
-    <script type="text/javascript">
-        $('.container img').replaceWith(function(i, v){
-            return $('<div/>', {
-                style: 'background-image: url(' + this.src + ');' +
-                'width:' + this.width + 'px;' +
-                'height:' + this.height + 'px;',
-                class: 'fakeImg'
-            })
-        })
-    </script>
     <center>
     <a href="index"><p>Voltar</p></a>
     <h1>Jogo de Palavras em Inglês</h1>
@@ -25,11 +15,14 @@
     <div class="container">
         <img src="<%= image %>" width='270px' height='250px'/>
     </div>
-    <form>
-        <input type="text" name="answer">
-        <button type="button">Enviar</button>
-        <button type="button">Ajuda</button>
-    </form>
+    <input type="text" class="userAnswer">
+    <input type="button" value="Enviar" class="submit">
+    <input type="button" value="Ajuda" class="userHelp">
+    <br>
+    <p class="answer">Retorno da resposta</p>
+    <p class="help">Retorno da ajuda</p>
     </center>
+
+    <script src="js/game.js"></script>
 </body>
 </html>
