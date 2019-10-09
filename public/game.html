@@ -15,12 +15,15 @@
     <div class="container">
         <img src="<%= image %>" width='270px' height='250px'/>
     </div>
-    <input type="text" class="userAnswer">
-    <input type="button" value="Enviar" class="submit">
-    <input type="button" value="Ajuda" class="userHelp">
+    <form action="/play" method="GET">
+        <input type="hidden" name="imgId" value="<%= image %>">
+        <input type="text" name="userAnswer">
+        <input type="submit" value="Enviar" name="userSubmit">
+        <input type="submit" value="Ajuda" name="userHelp">
+    </form>
     <br>
-    <p class="answer">Retorno da resposta</p>
-    <p class="help">Retorno da ajuda</p>
+    <p name="answer">Retorno da resposta</p>
+    <p name="help">Retorno da ajuda</p>
     </center>
 
     <script src="js/game.js"></script>
