@@ -1,0 +1,20 @@
+{
+    "visual_recognition":
+    {
+        "url": "https://gateway.watsonplatform.net/visual-recognition/api/",
+        "version": "2018-03-19",
+        "iam_apikey": "OmoT6SPe3wacpfPKawI_e8EX0NG1VMbmbJMt-TSL9U1x"
+    },
+    "watson_assistant":
+    {
+        "url": "https://gateway.watsonplatform.net/assistant/api/",
+        "version": "2018-09-19",
+        "iam_apikey": "RvHtP5bqBKk_EJekpmhxwC3ErPh3MFpssNEqrxv08zJw"
+    },
+    "language_translator":
+    {
+        "url": "",
+        "version": "",
+        "iam_apikey": ""
+    }
+}
