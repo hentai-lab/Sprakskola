@@ -13,8 +13,8 @@
     },
     "language_translator":
     {
-        "url": "",
-        "version": "",
-        "iam_apikey": ""
+        "url": "https://gateway.watsonplatform.net/language-translator/api",
+        "version": "2018-08-07",
+        "iam_apikey": "2m3QVANRCRDAzGIR01MectiLo2yDUinm0KsSEZPS4VY9"
     }
 }
