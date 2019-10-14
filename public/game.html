@@ -9,25 +9,25 @@
 </head>
 <body>
     <center>
-    <a href="index"><p>Voltar</p></a>
-    <h1>Jogo de Palavras em Inglês</h1>
-    <p>Informe a palavra em inglês o que representa a imagem abaixo:</p>
-    <div class="container">
-        <img src="<%= image %>" width='270px' height='250px'/>
-    </div>
-    <form action="/play" method="GET">
-        <input type="hidden" name="imgId" value="<%= image %>">
-        <input type="text" name="userAnswer">
-        <input type="submit" value="Enviar" name="userSubmit">
-    </form>
-    <br>
-    <form action="/help" method="GET">
-        <input type="hidden" name="imgId" value="<%= image %>">
-        <input type="submit" value="Ajuda" name="userHelp">
-    </form>
-    <br>
-    <input class="input_game" type="text" name="answer" value="<%= answer %>" readonly>
-    <input class="input_game" type="text" name="help" value="<%= help %>" readonly>
+        <a href="index"><p>Voltar</p></a>
+        <h1>Jogo de Palavras em Inglês</h1>
+        <p>Informe a palavra em inglês o que representa a imagem abaixo:</p>
+        <div class="container">
+            <img src="<%= image %>" width='270px' height='250px'/>
+        </div>
+        <form action="/play" method="GET">
+            <input type="hidden" name="imgId" value="<%= image %>">
+            <input type="text" name="userAnswer">
+            <input type="submit" value="Enviar" name="userSubmit">
+        </form>
+        <br>
+        <form action="/help" method="GET">
+            <input type="hidden" name="imgId" value="<%= image %>">
+            <input type="submit" value="Ajuda" name="userHelp">
+        </form>
+        <br>
+        <input class="input_game" type="text" name="answer" value="<%= answer %>" readonly>
+        <input class="input_game" type="text" name="help" value="<%= help %>" readonly>
     </center>
 
     <script src="js/game.js"></script>

@@ -49,3 +49,11 @@ body {
   outline: none;
   text-align: center;
 }
+
+.input_chat {
+  background: transparent;
+  border: none;
+  border-color: transparent;
+  outline: none;
+  text-align: center;
+}

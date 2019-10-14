@@ -36,8 +36,8 @@ app.get('/chat', (req, res) => {
     res.render('chat.html');
 });
 
-app.get('/chat-2', (req, res) => {
-    res.render('chat-2.html');
+app.get('/chat2', (req, res) => {
+    res.render('chat2.html');
 });
 
 app.get('/message', (req, res) => {
