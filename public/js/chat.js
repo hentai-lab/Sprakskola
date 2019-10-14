@@ -1,5 +1,5 @@
 var hostElement = document.querySelector('.Chat__body');
-const integration_id = '5edfb68f-ee2e-490e-931b-7dbd9483a5b9';
+const integration_id = '6e183577-5946-40d7-b923-ae456490074f';
 
 window.loadWatsonAssistantChat({
     debug: true,
