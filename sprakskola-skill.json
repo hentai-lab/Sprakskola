@@ -1,0 +1,448 @@
+{
+  "name": "Escola-Idioma",
+  "intents": [
+    {
+      "intent": "courses_intent",
+      "examples": [
+        {
+          "text": "Pode me falar dos cursos?"
+        },
+        {
+          "text": "Quais cursos tem?"
+        },
+        {
+          "text": "Quais os cursos disponívels?"
+        },
+        {
+          "text": "Quais os cursos?"
+        },
+        {
+          "text": "Cursos?"
+        },
+        {
+          "text": "Tem cursos?"
+        },
+        {
+          "text": "Pode me mostrar os cursos?"
+        },
+        {
+          "text": "Me fale dos cursos"
+        },
+        {
+          "text": "Me mostre os cursos"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "courses_values_intent",
+      "examples": [
+        {
+          "text": "Qual o valor de cada curso?"
+        },
+        {
+          "text": "Quanto tá?"
+        },
+        {
+          "text": "Quanto está saindo cada um?"
+        },
+        {
+          "text": "Quanto custa cada um?"
+        },
+        {
+          "text": "Qual o valor?"
+        },
+        {
+          "text": "Qual o valor deles?"
+        },
+        {
+          "text": "Qual o valor dos cursos?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "courses_days",
+      "examples": [
+        {
+          "text": "Quais os dias da semana de cada curso?"
+        },
+        {
+          "text": "Quais os dias de cada curso?"
+        },
+        {
+          "text": "Quais dias tem os cursos?"
+        },
+        {
+          "text": "Quais os dias?"
+        },
+        {
+          "text": "Quais dias da semana os cursos?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "welcome",
+      "examples": [
+        {
+          "text": "Mahalo"
+        },
+        {
+          "text": "Oi"
+        },
+        {
+          "text": "Tudo bem"
+        },
+        {
+          "text": "Como está"
+        },
+        {
+          "text": "Estou bem e você"
+        },
+        {
+          "text": "Boa tarde"
+        },
+        {
+          "text": "Bom dia"
+        },
+        {
+          "text": "Boa noite"
+        },
+        {
+          "text": "Fala meu bom"
+        },
+        {
+          "text": "Fala men"
+        },
+        {
+          "text": "Kkk eae men"
+        },
+        {
+          "text": "Eae tio"
+        },
+        {
+          "text": "Opa"
+        },
+        {
+          "text": "E ae"
+        },
+        {
+          "text": "Eae"
+        },
+        {
+          "text": "E a e"
+        },
+        {
+          "text": "Yay"
+        },
+        {
+          "text": "Yo"
+        },
+        {
+          "text": "Olá"
+        },
+        {
+          "text": "Oula"
+        },
+        {
+          "text": "Oie"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "max_students",
+      "examples": [
+        {
+          "text": "Quantos alunos pode ter?"
+        },
+        {
+          "text": "Quantos alunos pode ter por turma?"
+        },
+        {
+          "text": "Qual o número máximo?"
+        },
+        {
+          "text": "Qual o número máximo de alunos?"
+        },
+        {
+          "text": "Qual o número máximo de alunos por turma?"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "languages",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Inglês",
+          "synonyms": [
+            "Ingles, inglês, ingles"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Espanhol",
+          "synonyms": [
+            "espanhol"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "pt-br",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "skill_id": "e91562c9-4b92-446a-8b0e-d09f2eceb50c",
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Dias_Curso_Ingles",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O curso de inglês é segundas e terças!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#courses_days && @languages:Inglês",
+      "dialog_node": "node_9_1569954300237",
+      "previous_sibling": "node_6_1569954195993"
+    },
+    {
+      "type": "standard",
+      "title": "Cursos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Temos cursos de inglês e espanhol!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#courses_intent",
+      "dialog_node": "node_2_1569953328400",
+      "previous_sibling": "Bem-vindo"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O curso de  espanhol quartas e quintas!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#courses_days && @languages:Espanhol",
+      "dialog_node": "node_8_1569954327524",
+      "previous_sibling": "node_9_1569954300237"
+    },
+    {
+      "type": "standard",
+      "title": "Valor_Curso_Espanhol",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O valor do curso de espanhol é 1300,00 reais!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#courses_values_intent && @languages:Espanhol",
+      "dialog_node": "node_6_1569953845980",
+      "previous_sibling": "node_7_1569953795940"
+    },
+    {
+      "type": "standard",
+      "title": "Valor_Curso_Ingles",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O valor do curso de inglês é 1000,00 reais!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#courses_values_intent && @languages:Inglês",
+      "dialog_node": "node_7_1569953795940",
+      "previous_sibling": "node_3_1569953532508"
+    },
+    {
+      "type": "standard",
+      "title": "Valor_Curso",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O valor do curso de inglês é 1000,00 reais e o de espanhol é 1300,00 reais!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#courses_values_intent &&  @languages != \"Inglês\" && @languages != \"Espanhol\"",
+      "dialog_node": "node_3_1569953532508",
+      "previous_sibling": "node_2_1569953328400"
+    },
+    {
+      "type": "standard",
+      "title": "Em outros casos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Eu não entendi. Você pode tentar reformular a frase."
+              },
+              {
+                "text": "Você pode reformular sua afirmação? Eu não estou entendendo."
+              },
+              {
+                "text": "Eu não entendi o sentido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Em outros casos",
+      "previous_sibling": "node_6_1569953845980"
+    },
+    {
+      "type": "standard",
+      "title": "Quantidade_Alunos_Curso",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O número máximo de alunos por turma é 15!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#max_students",
+      "dialog_node": "node_8_1569954416452",
+      "previous_sibling": "node_10_1570499689131"
+    },
+    {
+      "type": "standard",
+      "title": "Bem-vindo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá, seja bem-vindo(a) à Escola de Idiomas! Como posso lhe ajudar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Bem-vindo",
+      "previous_sibling": "node_8_1569954327524"
+    },
+    {
+      "type": "standard",
+      "title": "Dias_Curso",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O curso de inglês é segundas e terças e o curso de  espanhol quartas e quintas!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#courses_days &&  @languages != \"Inglês\" && @languages != \"Espanhol\"",
+      "dialog_node": "node_6_1569954195993",
+      "previous_sibling": "node_8_1569954416452"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá! Em que posso lhe ajudar?"
+              },
+              {
+                "text": "Oi, tudo bom? Em que posso lhe ajudar?"
+              },
+              {
+                "text": "Opa! No que posso lhe ajudar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#welcome",
+      "dialog_node": "node_10_1570499689131"
+    }
+  ],
+  "workspace_id": "e91562c9-4b92-446a-8b0e-d09f2eceb50c",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
