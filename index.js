@@ -1,5 +1,5 @@
 const express = require('express');
-const visual_recognition = require('./public/js/game.js');
+const gameJS = require('./public/js/game.js');
 
 const app = express();
 
@@ -21,9 +21,13 @@ app.get('/game', (req, res) => {
 
 app.get('/play', (req, res) => {
     var userAnswer = req.query.userAnswer;
-    var answer = req.query.answer;
     var imgId = req.query.imgId;
-    visual_recognition.visualRecognition('./public' + imgId, userAnswer, imgId, res);
+    gameJS.visualRecognition('./public' + imgId, userAnswer, imgId, res);
+});
+
+app.get('/help', (req, res) => {
+    var imgId = req.query.imgId;
+    gameJS.languageTranslator('./public' + imgId, imgId, res);
 });
 
 app.get('/chat', (req, res) => {
