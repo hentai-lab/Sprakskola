@@ -17,44 +17,35 @@ const language_Translator = new LanguageTranslatorV3({
     version: keys.language_translator.version,
 });
 
-module.exports.visualRecognition = (paramImg, userAnswer, imgId, res) => {
+module.exports.game = (paramImg, userAnswer, imgId, res, option) => {
     var image = imgId;
     var params = {
         images_file: fs.createReadStream(paramImg)
     };
     visual_Recognition.classify(params).then(result => {
         var recognized = result.images[0].classifiers[0].classes[0].class;
-        if(recognized == userAnswer) {
-            imgId = Math.floor(Math.random() * 7);
-            image = '/styles/images/' + imgId + '.png';
-            answer = 'Acertou!';
-            help = 'Retorno da ajuda';
+        if(option == '1') {
+            language_Translator.translate({
+                text: recognized,
+                source: 'en',
+                target: 'pt'
+            }).then(translation => {
+                help = translation.translations[0].translation;
+                res.render('game.html', {'image': image, 'answer': answer, 'help': help});
+            }).catch(err => {
+                console.log(err);
+            });
         } else {
-            answer = 'Errou!';
-        }
-        res.render('game.html', {'image': image, 'answer': answer, 'help': help});
-    }).catch(err => {
-        console.log(err);
-    });
-};
-
-module.exports.languageTranslator = (paramImg, imgId, res) => {
-    var image = imgId;
-    var params = {
-        images_file: fs.createReadStream(paramImg)
-    };
-    visual_Recognition.classify(params).then(result => {
-        var recognized = result.images[0].classifiers[0].classes[0].class;
-        language_Translator.translate({
-            text: recognized,
-            source: 'en',
-            target: 'pt'
-        }).then(translation => {
-            help = translation.translations[0].translation;
+            if(recognized == userAnswer) {
+                imgId = Math.floor(Math.random() * 7);
+                image = '/styles/images/' + imgId + '.png';
+                answer = 'Acertou!';
+                help = 'Retorno da ajuda';
+            } else {
+                answer = 'Errou!';
+            }
             res.render('game.html', {'image': image, 'answer': answer, 'help': help});
-        }).catch(err => {
-            console.log(err);
-        });
+        }
     }).catch(err => {
         console.log(err);
     });

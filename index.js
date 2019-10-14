@@ -10,6 +10,8 @@ app.set('view engine', 'html');
 
 const port = process.env.PORT || 3000;
 
+var userAnswer = '';
+
 app.get('/index', (req, res) => {
     res.render('index.html');
 });
@@ -20,14 +22,14 @@ app.get('/game', (req, res) => {
 });
 
 app.get('/play', (req, res) => {
-    var userAnswer = req.query.userAnswer;
+    userAnswer = req.query.userAnswer;
     var imgId = req.query.imgId;
-    gameJS.visualRecognition('./public' + imgId, userAnswer, imgId, res);
+    gameJS.game('./public' + imgId, userAnswer, imgId, res, '0');
 });
 
 app.get('/help', (req, res) => {
     var imgId = req.query.imgId;
-    gameJS.languageTranslator('./public' + imgId, imgId, res);
+    gameJS.game('./public' + imgId, userAnswer, imgId, res, '1');
 });
 
 app.get('/chat', (req, res) => {
