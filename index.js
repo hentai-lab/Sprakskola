@@ -1,4 +1,3 @@
-const AssistantV2 = require('ibm-watson/assistant/v2');
 const express = require('express');
 const visual_recognition = require('./public/js/game.js');
 
@@ -17,14 +16,14 @@ app.get('/index', (req, res) => {
 
 app.get('/game', (req, res) => {
     var imgId = Math.floor(Math.random() * 7);
-    res.render('game.html', {'image': '/styles/images/' + imgId + '.png'});
+    res.render('game.html', {'image': '/styles/images/' + imgId + '.png', 'answer': 'Retorno da resposta', 'help': 'Retorno da ajuda'});
 });
 
 app.get('/play', (req, res) => {
     var userAnswer = req.query.userAnswer;
     var answer = req.query.answer;
     var imgId = req.query.imgId;
-    visual_recognition.visualRecognition('./public' + imgId, userAnswer);
+    visual_recognition.visualRecognition('./public' + imgId, userAnswer, imgId, res);
 });
 
 app.get('/chat', (req, res) => {
