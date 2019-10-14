@@ -4,40 +4,47 @@
 }
 
 html {
-    height: 100%;
-  }
+  height: 100%;
+}
 
-  body {
-    background: #f7f7f7;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
+body {
+  background: #f7f7f7;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 
-  .Chat__header {
-    text-align: center;
-    width: 100%;
-  }
+.Chat__header {
+  text-align: center;
+  width: 100%;
+}
 
-  .Chat__header h1, .Chat__header h1 a {
-    font-size: 1.2rem;
-  }
+.Chat__header h1, .Chat__header h1 a {
+  font-size: 1.2rem;
+}
 
-  .Chat__holder,
-  .Chat__body {
-    border-radius: 0.5em;
-  }
+.Chat__holder,
+.Chat__body {
+  border-radius: 0.5em;
+}
 
-  .Chat__holder {
-    background: #f7f7f7;
-    height: 540px;
-    margin: 32px auto 0 auto;
-    width: 320px;
-  }
+.Chat__holder {
+  background: #f7f7f7;
+  height: 540px;
+  margin: 32px auto 0 auto;
+  width: 320px;
+}
 
-  .Chat__body {
-    height: 540px;
-    width: 320px;
-    max-height: calc(100vh - 140px);
-  }
+.Chat__body {
+  height: 540px;
+  width: 320px;
+  max-height: calc(100vh - 140px);
+}
+
+.input_game {
+  border: none;
+  border-color: transparent;
+  outline: none;
+  text-align: center;
+}
