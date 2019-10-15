@@ -2,18 +2,18 @@
     "visual_recognition": {
         "url": "https://gateway.watsonplatform.net/visual-recognition/api/",
         "version": "2018-03-19",
-        "iam_apikey": "g76QS-8lujRkLYrmZ1hxsHU9NZdXTAkE5J9EBIcr590M"
+        "iam_apikey": ""
     },
     "watson_assistant": {
         "url": "https://gateway.watsonplatform.net/assistant/api/",
         "version": "2018-09-19",
-        "iam_apikey": "sIxly0JYmEYn3eH3tFI6a1W75U_vBxc0RPjVqs_gzkd1",
-        "assistant_id": "9058b7b4-0512-4285-96d7-99e4f68be38d",
-        "workspace_id": "a7e5fc13-bd82-47f5-b7a4-8608be082ed9"
+        "iam_apikey": "",
+        "assistant_id": "",
+        "workspace_id": ""
     },
     "language_translator": {
         "url": "https://gateway.watsonplatform.net/language-translator/api",
         "version": "2018-08-07",
-        "iam_apikey": "N4lDio3KrdwnLvfnS6AspKaU54-n1GdaZ_Ix4guByU_8"
+        "iam_apikey": ""
     }
 }
