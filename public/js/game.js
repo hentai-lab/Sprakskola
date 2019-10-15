@@ -3,9 +3,6 @@ const LanguageTranslatorV3 = require('ibm-watson/language-translator/v3');
 const fs = require('fs');
 const keys = require('./../../keys.json');
 
-var answer = 'Retorno da resposta';
-var help = 'Retorno da ajuda';
-
 const visual_Recognition = new VisualRecognitionV3({
     url: keys.visual_recognition.url,
     version: keys.visual_recognition.version,
@@ -18,6 +15,9 @@ const language_Translator = new LanguageTranslatorV3({
 });
 
 module.exports.game = (paramImg, userAnswer, imgId, res, option) => {
+    var answer = 'Retorno da resposta';
+    var help = 'Retorno da ajuda';
+    
     var image = imgId;
     var params = {
         images_file: fs.createReadStream(paramImg)

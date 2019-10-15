@@ -3,18 +3,20 @@
     {
         "url": "https://gateway.watsonplatform.net/visual-recognition/api/",
         "version": "2018-03-19",
-        "iam_apikey": "OmoT6SPe3wacpfPKawI_e8EX0NG1VMbmbJMt-TSL9U1x"
+        "iam_apikey": ""
     },
     "watson_assistant":
     {
         "url": "https://gateway.watsonplatform.net/assistant/api/",
         "version": "2018-09-19",
-        "iam_apikey": "RvHtP5bqBKk_EJekpmhxwC3ErPh3MFpssNEqrxv08zJw"
+        "iam_apikey": "",
+		"assistant_id": "",
+        "workspace_id": ""
     },
     "language_translator":
     {
         "url": "https://gateway.watsonplatform.net/language-translator/api",
         "version": "2018-08-07",
-        "iam_apikey": "2m3QVANRCRDAzGIR01MectiLo2yDUinm0KsSEZPS4VY9"
+        "iam_apikey": ""
     }
 }

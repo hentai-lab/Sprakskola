@@ -28,7 +28,7 @@ npm start
 
 ### keys.json
 
-The **keys.json** file has already included all the necessary keys, but I changed it in IBM Cloud and therefore will not work. Unless you change the file keys with your own keys!
+The **keys.json** file is responsible for storing and passing the keys needed to execute the code, since it uses IBM Cloud services. For the code to work, you must enter your credentials (keys) in this file.
 
 ### sprakskola-skill.json
 
