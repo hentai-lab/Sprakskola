@@ -1,5 +1,6 @@
 const express = require('express');
 const gameJS = require('./public/js/game.js');
+const chat = require('./public/js/chat2.js');
 
 const app = express();
 
@@ -37,7 +38,12 @@ app.get('/chat', (req, res) => {
 });
 
 app.get('/chat2', (req, res) => {
-    res.render('chat2.html');
+    res.render('chat2.html', {'bot': ''});
+});
+
+app.get('/chatbot', (req, res) => {
+    var message = req.query.message;
+    chat.chat(message, res);
 });
 
 app.get('/message', (req, res) => {

@@ -11,11 +11,12 @@
     <center>
       <a href="index"><p>Voltar</p></a>
 
-      <form action="/chatbot" method="GET"></form>
-      <input class="input_chat" type="text" name="answer" value="<%= message %>" readonly>
-      <input type="submit" value="Enviar" name="submitMessage">
-      <br><br>
-      <input class="input_chat" type="text" name="help" value="<%= bot %>" readonly>
+      <form action="/chatbot" method="GET">
+        <input type="text" name="message">
+        <input type="submit" value="Enviar" name="submitMessage">
+        <br><br>
+        <input class="input_chat" type="text" name="bot" value="<%= bot %>" maxlength="100" size="100" readonly>
+      </form>
     </center>
 
     <script src="js/chat-2.js"></script>
