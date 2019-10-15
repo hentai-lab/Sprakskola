@@ -18,7 +18,7 @@ module.exports.chat = (userMessage, res) => {
         var requestEndTime = new Date().getTime();
         var resultRequestTime = requestEndTime - requestStartTime;
         console.log('Chat SRT: ' + resultRequestTime + 'ms');
-        res.render('chat.html', {'bot': botResponse});
+        res.render('chat.html', { 'bot': botResponse });
     }).catch(err => {
         console.log(err);
     });

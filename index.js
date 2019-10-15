@@ -19,7 +19,7 @@ app.get('/index', (req, res) => {
 
 app.get('/game', (req, res) => {
     var imgId = Math.floor(Math.random() * 7);
-    res.render('game.html', {'image': '/styles/images/' + imgId + '.png', 'answer': 'Retorno da resposta', 'help': 'Retorno da ajuda'});
+    res.render('game.html', { 'image': '/styles/images/' + imgId + '.png', 'answer': 'Retorno da resposta', 'help': 'Retorno da ajuda' });
 });
 
 app.get('/play', (req, res) => {
@@ -34,7 +34,7 @@ app.get('/help', (req, res) => {
 });
 
 app.get('/chat', (req, res) => {
-    res.render('chat.html', {'bot': ''});
+    res.render('chat.html', { 'bot': '' });
 });
 
 app.get('/chatbot', (req, res) => {

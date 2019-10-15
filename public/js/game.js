@@ -27,7 +27,7 @@ module.exports.game = (paramImg, userAnswer, imgId, res, option) => {
         var resultRequestTime = requestEndTime - requestStartTime;
         console.log('Image SRT: ' + resultRequestTime + 'ms');
         var recognized = result.images[0].classifiers[0].classes[0].class;
-        if(option == '1') {
+        if (option == '1') {
             language_Translator.translate({
                 text: recognized,
                 source: 'en',
@@ -37,12 +37,12 @@ module.exports.game = (paramImg, userAnswer, imgId, res, option) => {
                 requestEndTime = new Date().getTime();
                 resultRequestTime = requestEndTime - requestStartTime;
                 console.log('Translate SRT: ' + resultRequestTime + 'ms');
-                res.render('game.html', {'image': image, 'answer': answer, 'help': help});
+                res.render('game.html', { 'image': image, 'answer': answer, 'help': help });
             }).catch(err => {
                 console.log(err);
             });
         } else {
-            if(recognized == userAnswer) {
+            if (recognized == userAnswer) {
                 imgId = Math.floor(Math.random() * 7);
                 image = '/styles/images/' + imgId + '.png';
                 answer = 'Acertou!';
@@ -50,7 +50,7 @@ module.exports.game = (paramImg, userAnswer, imgId, res, option) => {
             } else {
                 answer = 'Errou!';
             }
-            res.render('game.html', {'image': image, 'answer': answer, 'help': help});
+            res.render('game.html', { 'image': image, 'answer': answer, 'help': help });
         }
     }).catch(err => {
         console.log(err);

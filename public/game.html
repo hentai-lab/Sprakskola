@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Escola de Idiomas</title>
 
-    <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
     <center>
-        <a href="index"><p>Voltar</p></a>
+        <a style="text-decoration: none;" href="index">
+            <p>Voltar</p>
+        </a>
         <h1>Jogo de Palavras em Inglês</h1>
         <p>Informe a palavra em inglês o que representa a imagem abaixo:</p>
-        <div class="container">
-            <img src="<%= image %>" width='270px' height='250px'/>
+        <div class="container-fluid">
+            <img class="img-fluid" src="<%= image %>" width='270px' height='250px' />
         </div>
         <form action="/play" method="GET">
             <input type="hidden" name="imgId" value="<%= image %>">
@@ -32,4 +38,5 @@
 
     <script src="js/game.js"></script>
 </body>
+
 </html>
