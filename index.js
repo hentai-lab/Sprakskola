@@ -43,5 +43,5 @@ app.get('/chatbot', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log('App iniciada: http://localhost:' + port);
+    console.log('App iniciada: http://localhost:' + port + '\n');
 });

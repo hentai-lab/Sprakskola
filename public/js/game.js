@@ -15,14 +15,17 @@ const language_Translator = new LanguageTranslatorV3({
 });
 
 module.exports.game = (paramImg, userAnswer, imgId, res, option) => {
+    var requestStartTime = new Date().getTime();
     var answer = 'Retorno da resposta';
     var help = 'Retorno da ajuda';
-    
     var image = imgId;
     var params = {
         images_file: fs.createReadStream(paramImg)
     };
     visual_Recognition.classify(params).then(result => {
+        var requestEndTime = new Date().getTime();
+        var resultRequestTime = requestEndTime - requestStartTime;
+        console.log('Image SRT: ' + resultRequestTime + 'ms');
         var recognized = result.images[0].classifiers[0].classes[0].class;
         if(option == '1') {
             language_Translator.translate({
@@ -31,6 +34,9 @@ module.exports.game = (paramImg, userAnswer, imgId, res, option) => {
                 target: 'pt'
             }).then(translation => {
                 help = translation.translations[0].translation;
+                requestEndTime = new Date().getTime();
+                resultRequestTime = requestEndTime - requestStartTime;
+                console.log('Translate SRT: ' + resultRequestTime + 'ms');
                 res.render('game.html', {'image': image, 'answer': answer, 'help': help});
             }).catch(err => {
                 console.log(err);
